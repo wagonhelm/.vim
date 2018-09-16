@@ -35,7 +35,7 @@ endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-set showcmd		" Show (partial) command in status line.
+"set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
@@ -44,45 +44,38 @@ set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
 
-" Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
-endif
+execute pathogen#infect()
 
+set nowrap                      " wrap long lines
+set autoindent                  " indent at the same level of the
+set shiftwidth=4                " use indents of 4 spaces
+set expandtab                   " tabs are spaces, not tabs
+set tabstop=4                   " an indentation every four columns
+set softtabstop=4               " let backspace delete indent
 
-    set nowrap                      " wrap long lines
-    set autoindent                  " indent at the same level of the
-    set shiftwidth=4                " use indents of 4 spaces
-    set expandtab                   " tabs are spaces, not tabs
-    set tabstop=4                   " an indentation every four columns
-    set softtabstop=4               " let backspace delete indent
+colorscheme jellybeans   
 
-    
+set history=1000                " Store a ton of history (default is 20)
 
-    set history=1000                " Store a ton of history (default is 20)
-    
-    set tabpagemax=15               " only show 15 tabs
-    set showmode                    " display the current mode
+set tabpagemax=15               " only show 15 tabs
+"set showmode                    " display the current mode
 
-    " set cursorline                  " highlight current line
-    set nu                          " Line numbers on
-    colorscheme gruvbox 
-    set background=dark             " Assume a dark background
-    set clipboard=unnamed
-    
-    nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
-    nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>
-    map <Enter> o<ESC>
-    map <S-Enter> O<ESC>
-    inoremap fd <ESC>
-    nmap fc i#include <stdio.h><ESC>2o<ESC>iint main()<Enter>{<Enter>}<ESC>O
-    set colorcolumn=80
-	map <F9> :w <CR> : !clear && gcc % <CR>
-    map <C-i>f ifor(int i = 0; i = 0; i < n; ++i)<Enter>{<Enter>}<ESC>O
-    set runtimepath^=~/.vim/bundle/vim-airline/autoload/airline.vim
-    set laststatus=2
-    execute pathogen#infect()
-    let g:airline_theme='gruvbox'
-    let g:airline_powerline_fonts = 1
-    highlight LineNr ctermbg=000000
-    highlight NonText ctermfg=59 ctermbg=0 cterm=NONE guifg=#414e58 guibg=#232c31 gui=NONE
+set nu                          " Line numbers on
+set background=dark             " Assume a dark background
+set clipboard=unnamed
+set colorcolumn=80
+
+nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
+nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+inoremap fd <ESC>
+nmap fc i#include <stdio.h><ESC>2o<ESC>iint main()<Enter>{<Enter>}<ESC>O
+map <F9> :w <CR> : !clear && gcc % <CR>
+map <C-i>f ifor(int i = 0; i = 0; i < n; ++i)<Enter>{<Enter>}<ESC>O
+let g:airline_theme='jellybeans'
+let g:airline_powerline_fonts = 1
+highlight LineNr ctermbg=234
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
+highlight NonText ctermfg=59 ctermbg=235 cterm=NONE 
