@@ -35,7 +35,7 @@ endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-"set showcmd		" Show (partial) command in status line.
+set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
@@ -53,7 +53,7 @@ set expandtab                   " tabs are spaces, not tabs
 set tabstop=4                   " an indentation every four columns
 set softtabstop=4               " let backspace delete indent
 
-colorscheme jellybeans   
+colorscheme gruvbox   
 
 set history=1000                " Store a ton of history (default is 20)
 
@@ -70,12 +70,12 @@ nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "'
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 inoremap fd <ESC>
-nmap fc i#include <stdio.h><ESC>2o<ESC>iint main()<Enter>{<Enter>}<ESC>O
-map <F9> :w <CR> : !clear && gcc % <CR>
-map <C-i>f ifor(int i = 0; i = 0; i < n; ++i)<Enter>{<Enter>}<ESC>O
-let g:airline_theme='jellybeans'
+nmap <C-c>c i#include <stdio.h><ESC>2o<ESC>iint main()<Enter>{<Enter>}<ESC>O
+nmap <C-c>b :w<CR>:!clear && g++ -Wall -Wextra % -o %:r && ./%:r<CR>
+nmap <C-c>i ifor(int i = 0; i < n; ++i)<Enter>{<Enter>}<ESC>O
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 highlight LineNr ctermbg=234
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline
-highlight NonText ctermfg=59 ctermbg=235 cterm=NONE 
+highlight NonText ctermfg=59 ctermbg=236 term=NONE 
