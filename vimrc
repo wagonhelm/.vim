@@ -48,10 +48,10 @@ execute pathogen#infect()
 
 set nowrap                      " wrap long lines
 set autoindent                  " indent at the same level of the
-set shiftwidth=4                " use indents of 4 spaces
+set shiftwidth=2                " use indents of 4 spaces
 set expandtab                   " tabs are spaces, not tabs
-set tabstop=4                   " an indentation every four columns
-set softtabstop=4               " let backspace delete indent
+set tabstop=2                   " an indentation every four columns
+set softtabstop=2               " let backspace delete indent
 
 colorscheme gruvbox   
 
@@ -64,12 +64,14 @@ set nu                          " Line numbers on
 set background=dark             " Assume a dark background
 set clipboard=unnamed
 set colorcolumn=80
+set pastetoggle=<F3>
 
 nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
 nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 inoremap fd <ESC>
+nmap fs :w<cr>
 nmap <C-c>c i#include <stdio.h><ESC>2o<ESC>iint main()<Enter>{<Enter>}<ESC>O
 nmap <C-c>b :w<CR>:!clear && g++ -Wall -Wextra % -o %:r && ./%:r<CR>
 nmap <C-c>i ifor(int i = 0; i < n; ++i)<Enter>{<Enter>}<ESC>O
