@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/justin/gits/CMPUT201/notes'
+let g:netrw_dirhist_2='/home/justin/gits/liveness-analysis-wagonhelm/Student_Solution'
+let g:netrw_dirhist_3='/home/justin/gits/liveness-analysis-wagonhelm/Resources/Student_Download/tests'

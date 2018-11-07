@@ -72,6 +72,7 @@ map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 inoremap fd <ESC>
 nmap fs :w<cr>
+nmap zq :q!<Enter>
 nmap <C-c>c i#include <stdio.h><ESC>2o<ESC>iint main()<Enter>{<Enter>}<ESC>O
 nmap <C-c>b :w<CR>:!clear && g++ -Wall -Wextra % -o %:r && ./%:r<CR>
 nmap <C-c>i ifor(int i = 0; i < n; ++i)<Enter>{<Enter>}<ESC>O
