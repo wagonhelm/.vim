@@ -70,8 +70,8 @@ nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'
 nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
-inoremap fd <ESC>
-nmap jk :w<cr>
+inoremap jk <ESC>
+nmap fs :w<cr>
 nmap zq :q!<Enter>
 nmap <C-c>c i#include <stdio.h><ESC>2o<ESC>iint main()<Enter>{<Enter>}<ESC>O
 nmap <C-c>b :w<CR>:!clear && g++ -Wall -Wextra % -o %:r && ./%:r<CR>
