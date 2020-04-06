@@ -73,9 +73,8 @@ map <S-Enter> O<ESC>
 inoremap jk <ESC>
 nmap fs :w<cr>
 nmap zq :q!<Enter>
-nmap <C-c>c i#include <stdio.h><ESC>2o<ESC>iint main()<Enter>{<Enter>}<ESC>O
-nmap <C-c>b :w<CR>:!clear && g++ -Wall -Wextra % -o %:r && ./%:r<CR>
-nmap <C-c>i ifor(int i = 0; i < n; ++i)<Enter>{<Enter>}<ESC>O
+vnoremap <C-c> "+y
+map <C-v>  "+P
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 highlight LineNr ctermbg=234
