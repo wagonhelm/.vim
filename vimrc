@@ -53,7 +53,8 @@ set expandtab                   " tabs are spaces, not tabs
 set tabstop=2                   " an indentation every four columns
 set softtabstop=2               " let backspace delete indent
 
-colorscheme gruvbox   
+colorscheme PaperColor
+
 
 set history=1000                " Store a ton of history (default is 20)
 
@@ -73,9 +74,10 @@ map <S-Enter> O<ESC>
 inoremap jk <ESC>
 nmap fs :w<cr>
 nmap zq :q!<Enter>
-let g:airline_theme='gruvbox'
+let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
 highlight LineNr ctermbg=234
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline
 highlight NonText ctermfg=59 ctermbg=236 term=NONE 
+set relativenumber
