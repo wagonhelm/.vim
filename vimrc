@@ -74,6 +74,7 @@ map <S-Enter> O<ESC>
 inoremap jk <ESC>
 nmap fs :w<cr>
 nmap zq :q!<Enter>
+nmap rt :tabclose<Enter>
 let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
 highlight LineNr ctermbg=234
