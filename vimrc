@@ -64,7 +64,7 @@ set tabpagemax=15               " only show 15 tabs
 
 set nu                          " Line numbers on
 set background=dark             " Assume a dark background
-set clipboard=unnamed
+set clipboard=unnamedplus
 set colorcolumn=80
 set pastetoggle=<F3>
 
